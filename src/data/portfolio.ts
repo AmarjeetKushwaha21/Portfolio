@@ -161,13 +161,12 @@ export const portfolioData: PortfolioConfig = {
   } satisfies PersonalInfo,
 
   socialLinks: {
-    // PLACEHOLDER: paste your profile URLs — they propagate everywhere
-    github: '',
+    github: 'https://github.com/AmarjeetKushwaha21',
     linkedin: '',
-    leetcode: '',
-    codechef: '',
-    codeforces: '',
-    geeksforgeeks: '',
+    leetcode: 'https://leetcode.com/u/CSE13_058/',
+    codechef: 'https://www.codechef.com/users/cse_25_058',
+    codeforces: 'https://codeforces.com/profile/Amarjeet_Kushwaha',
+    geeksforgeeks: 'https://www.geeksforgeeks.org/profile/kushwahaami3w9',
     instagram: '',
     twitter: '',
     youtube: '',
@@ -419,9 +418,9 @@ export const portfolioData: PortfolioConfig = {
   codingProfiles: [
     {
       platform: 'leetcode',
-      username: 'your-username',
+      username: 'CSE13_058',
       description: 'Daily problem solving and contests.',
-      url: '',
+      url: 'https://leetcode.com/u/CSE13_058/',
       stats: [
         { label: 'Problems Solved', value: '—' },
         { label: 'Contest Rating', value: '—' },
@@ -430,9 +429,9 @@ export const portfolioData: PortfolioConfig = {
     },
     {
       platform: 'codechef',
-      username: 'your-username',
-      description: 'Long_challenge and Cook-Off contests.',
-      url: '',
+      username: 'cse_25_058',
+      description: 'Long challenge and Cook-Off contests.',
+      url: 'https://www.codechef.com/users/cse_25_058',
       stats: [
         { label: 'Rating', value: '—' },
         { label: 'Stars', value: '—' },
@@ -441,9 +440,9 @@ export const portfolioData: PortfolioConfig = {
     },
     {
       platform: 'codeforces',
-      username: 'your-username',
+      username: 'Amarjeet_Kushwaha',
       description: 'Div. 2 rounds and virtual contests.',
-      url: '',
+      url: 'https://codeforces.com/profile/Amarjeet_Kushwaha',
       stats: [
         { label: 'Rating', value: '—' },
         { label: 'Max Rating', value: '—' },
@@ -452,9 +451,9 @@ export const portfolioData: PortfolioConfig = {
     },
     {
       platform: 'gfg',
-      username: 'your-username',
+      username: 'kushwahaami3w9',
       description: 'Practice problems and articles.',
-      url: '',
+      url: 'https://www.geeksforgeeks.org/profile/kushwahaami3w9',
       stats: [
         { label: 'Problems Solved', value: '—' },
         { label: 'Institute Rank', value: '—' },
@@ -463,9 +462,9 @@ export const portfolioData: PortfolioConfig = {
     },
     {
       platform: 'hackerrank',
-      username: 'your-username',
+      username: 'kushwahaamarjee1',
       description: 'Skill certifications and challenges.',
-      url: '',
+      url: 'https://www.hackerrank.com/profile/kushwahaamarjee1',
       stats: [
         { label: 'Badges', value: '—' },
         { label: 'Stars', value: '—' },
@@ -474,9 +473,9 @@ export const portfolioData: PortfolioConfig = {
     },
     {
       platform: 'github',
-      username: 'Amarjeet Kushwaha'.toLowerCase().replace(/\s+/g, '-'),
+      username: 'AmarjeetKushwaha21',
       description: 'Open source and personal projects.',
-      url: '',
+      url: 'https://github.com/AmarjeetKushwaha21',
       stats: [
         { label: 'Repositories', value: '—' },
         { label: 'Followers', value: '—' },
