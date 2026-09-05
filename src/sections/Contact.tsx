@@ -58,7 +58,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="section-shell relative scroll-mt-24 py-24">
+    <section id="contact" className="section-shell relative scroll-mt-24 overflow-hidden py-24">
       <div
         aria-hidden
         className="animate-blob pointer-events-none absolute -bottom-24 left-1/4 size-96 rounded-full bg-indigo-500/10 blur-3xl"
