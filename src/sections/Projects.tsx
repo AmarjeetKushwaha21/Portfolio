@@ -52,7 +52,7 @@ export function Projects() {
         ))}
       </div>
 
-      <motion.div layout className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div layout className="mt-10 grid auto-rows-fr gap-6 sm:grid-cols-2">
         <AnimatePresence mode="popLayout">
           {visible.map((project, i) => (
             <motion.div
@@ -62,7 +62,6 @@ export function Projects() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
-              className={project.featured ? 'sm:col-span-2' : ''}
             >
               <ProjectCard project={project} index={i} />
             </motion.div>

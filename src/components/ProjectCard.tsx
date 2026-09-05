@@ -13,21 +13,17 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   const hasDemo = Boolean(project.demo)
 
   return (
-    <div
-      className={`glass-card group flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-500/40 hover:shadow-xl hover:shadow-indigo-500/10 ${
-        project.featured ? 'sm:col-span-2' : ''
-      }`}
-    >
-      {/* Visual header */}
+    <div className="glass-card group flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-indigo-500/40 hover:shadow-xl hover:shadow-indigo-500/10">
+      {/* Visual header — uniform height for every card */}
       <div
         aria-hidden
-        className={`relative flex items-center justify-center overflow-hidden bg-gradient-to-br ${
+        className={`relative flex h-40 items-center justify-center overflow-hidden bg-gradient-to-br sm:h-44 ${
           index % 3 === 0
             ? 'from-indigo-500/25 via-violet-500/15 to-cyan-400/20'
             : index % 3 === 1
               ? 'from-violet-500/25 via-fuchsia-500/10 to-indigo-400/20'
               : 'from-cyan-400/25 via-indigo-500/15 to-violet-400/20'
-        } ${project.featured ? 'h-40 sm:h-44' : 'h-36'}`}
+        }`}
       >
         {project.image ? (
           <img
