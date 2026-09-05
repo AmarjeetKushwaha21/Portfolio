@@ -67,7 +67,7 @@ export function SocialMedia() {
               ) : (
                 <a
                   href={entry.url}
-                  target={entry.isEmail ? undefined : '_blank'}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="glass-card group flex items-center gap-4 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-indigo-500/40"
                 >

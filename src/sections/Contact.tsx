@@ -86,6 +86,8 @@ export function Contact() {
                 {personalInfo.email ? (
                   <a
                     href={`mailto:${personalInfo.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="truncate text-sm font-medium text-slate-900 transition-colors hover:text-indigo-500 dark:text-white dark:hover:text-indigo-300"
                   >
                     {personalInfo.email}
