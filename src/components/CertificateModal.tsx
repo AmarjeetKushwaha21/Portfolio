@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ExternalLink, ShieldCheck, X } from 'lucide-react'
+import { ExternalLink, FileText, ShieldCheck, X } from 'lucide-react'
 import type { Certificate } from '../data/portfolio'
 
 interface CertificateModalProps {
@@ -94,16 +94,28 @@ export function CertificateModal({ certificate, onClose }: CertificateModalProps
               )}
             </div>
 
-            {certificate.verifyUrl && (
-              <div className="flex justify-end border-t border-slate-900/10 px-5 py-3 dark:border-white/10">
-                <a
-                  href={certificate.verifyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
-                >
-                  Verify Certificate <ExternalLink className="size-4" aria-hidden />
-                </a>
+            {(certificate.verifyUrl || certificate.pdfUrl) && (
+              <div className="flex justify-end gap-3 border-t border-slate-900/10 px-5 py-3 dark:border-white/10">
+                {certificate.pdfUrl && (
+                  <a
+                    href={certificate.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="glass-card inline-flex items-center gap-1.5 rounded-lg px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:text-indigo-500 dark:text-slate-200 dark:hover:text-indigo-300"
+                  >
+                    <FileText className="size-4" aria-hidden /> View PDF
+                  </a>
+                )}
+                {certificate.verifyUrl && (
+                  <a
+                    href={certificate.verifyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-indigo-500 to-violet-500 px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
+                  >
+                    Verify Certificate <ExternalLink className="size-4" aria-hidden />
+                  </a>
+                )}
               </div>
             )}
           </motion.div>

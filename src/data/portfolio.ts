@@ -108,6 +108,8 @@ export interface Certificate {
   credentialId: string
   image?: string
   verifyUrl: string
+  /** Optional official PDF, linked from the certificate lightbox */
+  pdfUrl?: string
   placeholder?: boolean
 }
 
@@ -392,13 +394,14 @@ export const portfolioData: PortfolioConfig = {
   // PLACEHOLDER: add real certificates — empty image falls back to a styled placeholder
   certificates: [
     {
-      id: 'cert-1',
-      name: 'Certificate Name (Placeholder)',
-      organization: 'Issuing Organization',
-      date: '20XX',
-      credentialId: 'CREDENTIAL-ID',
+      id: 'nptel-modern-cpp',
+      name: 'Programming in Modern C++ (Elite)',
+      organization: 'NPTEL — IIT Kharagpur · SWAYAM',
+      date: 'Jan–Apr 2026',
+      credentialId: 'NPTEL26CS52S1055101056',
+      image: '/images/certificates/nptel-modern-cpp.jpg',
+      pdfUrl: '/certificates/nptel-modern-cpp.pdf',
       verifyUrl: '',
-      placeholder: true,
     },
   ] satisfies Certificate[],
 
