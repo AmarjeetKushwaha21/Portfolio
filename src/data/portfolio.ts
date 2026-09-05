@@ -22,6 +22,7 @@ export interface PersonalInfo {
 }
 
 export interface SocialLinks {
+  whatsapp: string
   github: string
   linkedin: string
   leetcode: string
@@ -161,6 +162,8 @@ export const portfolioData: PortfolioConfig = {
   } satisfies PersonalInfo,
 
   socialLinks: {
+    // PLACEHOLDER: paste your WhatsApp link (e.g. https://wa.me/91XXXXXXXXXX)
+    whatsapp: '',
     github: 'https://github.com/AmarjeetKushwaha21',
     linkedin: '',
     leetcode: 'https://leetcode.com/u/CSE13_058/',

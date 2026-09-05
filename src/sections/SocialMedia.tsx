@@ -9,7 +9,7 @@ interface SocialEntry {
   label: string
   description: string
   url: string
-  brand?: 'github' | 'linkedin' | 'instagram' | 'x' | 'youtube'
+  brand?: 'whatsapp' | 'linkedin' | 'instagram' | 'x' | 'youtube'
   isEmail?: boolean
 }
 
@@ -17,11 +17,11 @@ export function SocialMedia() {
   const { socialLinks, personalInfo } = portfolioData
 
   const entries: SocialEntry[] = [
-    { key: 'github', label: 'GitHub', description: 'Code, contributions & open source', url: socialLinks.github, brand: 'github' },
+    { key: 'whatsapp', label: 'WhatsApp', description: 'Chat with me directly', url: socialLinks.whatsapp, brand: 'whatsapp' },
     { key: 'linkedin', label: 'LinkedIn', description: 'Professional network', url: socialLinks.linkedin, brand: 'linkedin' },
     { key: 'instagram', label: 'Instagram', description: 'Behind the scenes', url: socialLinks.instagram, brand: 'instagram' },
-    { key: 'x', label: 'X / Twitter', description: 'Thoughts & tech chatter', url: socialLinks.twitter, brand: 'x' },
     { key: 'email', label: 'Email', description: 'Best way to reach me', url: personalInfo.email ? `mailto:${personalInfo.email}` : '', isEmail: true },
+    { key: 'x', label: 'X / Twitter', description: 'Thoughts & tech chatter', url: socialLinks.twitter, brand: 'x' },
     { key: 'youtube', label: 'YouTube', description: 'Videos & tutorials', url: socialLinks.youtube, brand: 'youtube' },
   ]
 
