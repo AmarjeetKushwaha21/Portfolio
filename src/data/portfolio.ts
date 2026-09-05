@@ -394,16 +394,6 @@ export const portfolioData: PortfolioConfig = {
   // PLACEHOLDER: add real certificates — empty image falls back to a styled placeholder
   certificates: [
     {
-      id: 'nptel-modern-cpp',
-      name: 'Programming in Modern C++ (Elite)',
-      organization: 'NPTEL — IIT Kharagpur · SWAYAM',
-      date: 'Jan–Apr 2026',
-      credentialId: 'NPTEL26CS52S1055101056',
-      image: '/images/certificates/nptel-modern-cpp.jpg',
-      pdfUrl: '/certificates/nptel-modern-cpp.pdf',
-      verifyUrl: '',
-    },
-    {
       id: 'dgt-copa-ntc',
       name: 'National Trade Certificate — Computer Operator & Programming Assistant (COPA)',
       organization: 'DGT, Ministry of Skill Development · Govt. of India',
@@ -411,6 +401,16 @@ export const portfolioData: PortfolioConfig = {
       credentialId: '250920002798658',
       image: '/images/certificates/dgt-copa-ntc.jpg',
       pdfUrl: '/certificates/dgt-copa-ntc.pdf',
+      verifyUrl: '',
+    },
+    {
+      id: 'nptel-modern-cpp',
+      name: 'Programming in Modern C++ (Elite)',
+      organization: 'NPTEL — IIT Kharagpur · SWAYAM',
+      date: 'Jan–Apr 2026',
+      credentialId: 'NPTEL26CS52S1055101056',
+      image: '/images/certificates/nptel-modern-cpp.jpg',
+      pdfUrl: '/certificates/nptel-modern-cpp.pdf',
       verifyUrl: '',
     },
   ] satisfies Certificate[],
