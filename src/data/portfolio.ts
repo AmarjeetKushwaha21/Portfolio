@@ -403,6 +403,16 @@ export const portfolioData: PortfolioConfig = {
       pdfUrl: '/certificates/nptel-modern-cpp.pdf',
       verifyUrl: '',
     },
+    {
+      id: 'dgt-copa-ntc',
+      name: 'National Trade Certificate — Computer Operator & Programming Assistant (COPA)',
+      organization: 'DGT, Ministry of Skill Development · Govt. of India',
+      date: 'Sep 2025',
+      credentialId: '250920002798658',
+      image: '/images/certificates/dgt-copa-ntc.jpg',
+      pdfUrl: '/certificates/dgt-copa-ntc.pdf',
+      verifyUrl: '',
+    },
   ] satisfies Certificate[],
 
   // PLACEHOLDER: usernames + editable static stats (set values to "—" until known)
