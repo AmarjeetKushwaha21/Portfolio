@@ -1,0 +1,91 @@
+import { useEffect, useRef, useState } from 'react'
+import { useInView } from 'framer-motion'
+import { SectionHeading } from '../components/SectionHeading'
+import { Reveal } from '../components/Reveal'
+import { portfolioData, type StatItem } from '../data/portfolio'
+
+function Counter({ value, suffix }: { value: number; suffix?: string }) {
+  const ref = useRef<HTMLSpanElement>(null)
+  const inView = useInView(ref, { once: true, margin: '-40px' })
+  const [display, setDisplay] = useState(0)
+
+  useEffect(() => {
+    if (!inView || value <= 0) return
+    const duration = 1400
+    const start = performance.now()
+    let raf = 0
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setDisplay(Math.round(eased * value))
+      if (progress < 1) raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [inView, value])
+
+  return (
+    <span ref={ref} className="font-display tabular-nums">
+      {display}
+      {suffix}
+    </span>
+  )
+}
+
+function StatCard({ stat, index }: { stat: StatItem; index: number }) {
+  return (
+    <Reveal delay={index * 0.06}>
+      <div className="glass-card group relative overflow-hidden p-5 text-center transition-transform duration-300 hover:-translate-y-1">
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-400 opacity-0 transition-opacity group-hover:opacity-100"
+        />
+        <p className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
+          <Counter value={stat.value} suffix={stat.suffix} />
+        </p>
+        <p className="mt-1.5 text-xs font-medium tracking-wide text-slate-500 uppercase dark:text-slate-400">
+          {stat.label}
+        </p>
+      </div>
+    </Reveal>
+  )
+}
+
+export function About() {
+  const { intro } = portfolioData.personalInfo
+
+  return (
+    <section id="about" className="section-shell scroll-mt-24 py-24">
+      <SectionHeading
+        id="about-heading"
+        eyebrow="About Me"
+        title="A developer who loves the craft"
+      />
+
+      <div className="mt-12 grid gap-10 lg:grid-cols-2">
+        <Reveal>
+          <div className="glass-card h-full p-7 leading-relaxed text-slate-600 dark:text-slate-300">
+            <p>{intro}</p>
+            <p className="mt-4">
+              {/* PLACEHOLDER: replace with your current focus and goals */}
+              Currently, my focus is on deepening my full-stack skills — designing clean REST APIs,
+              crafting responsive frontend experiences, and sharpening my problem-solving through
+              competitive programming. I am working toward building products that real people enjoy
+              using.
+            </p>
+            <p className="mt-4">
+              I care about writing maintainable code, learning new technologies quickly, and
+              collaborating with teams that push me to grow.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-2">
+          {portfolioData.stats.map((stat, i) => (
+            <StatCard key={stat.id} stat={stat} index={i} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

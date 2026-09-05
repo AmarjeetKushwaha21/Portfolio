@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <meta
+      name="description"
+      content="Amarjeet Kushwaha — Software Developer & Full-Stack Developer. I build scalable, user-focused web applications and solve complex problems through code."
+    />
+    <meta
+      name="keywords"
+      content="Amarjeet Kushwaha, Software Developer, Full-Stack Developer, React, Node.js, Portfolio"
+    />
+    <meta name="author" content="Amarjeet Kushwaha" />
+    <meta name="theme-color" content="#0a0a14" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Amarjeet Kushwaha | Software Developer & Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Amarjeet Kushwaha — Software Developer & Full-Stack Developer."
+    />
+    <meta property="og:image" content="/images/profile.svg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Amarjeet Kushwaha | Software Developer & Full-Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Portfolio of Amarjeet Kushwaha — Software Developer & Full-Stack Developer."
+    />
+    <meta name="twitter:image" content="/images/profile.svg" />
+
+    <title>Amarjeet Kushwaha | Software Developer & Full-Stack Developer</title>
+
+    <script>
+      // Apply saved theme before paint to avoid a flash of the wrong theme
+      try {
+        const theme = localStorage.getItem('theme')
+        if (theme === 'light') document.documentElement.classList.remove('dark')
+      } catch {
+        /* default to dark */
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
