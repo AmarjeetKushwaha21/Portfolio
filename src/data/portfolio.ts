@@ -150,8 +150,8 @@ export const portfolioData: PortfolioConfig = {
     name: 'Amarjeet Kushwaha',
     role: 'Software Developer & Full-Stack Developer',
     // PLACEHOLDER: fill in your contact details
-    email: '',
-    phone: '',
+    email: 'kushwahaamarjeet34@gmail.com',
+    phone: '+91 9648634050',
     location: '',
     profileImage: '/images/profile.jpg',
     resume: '/resume/Amarjeet-Kushwaha-Resume.pdf',
@@ -162,17 +162,16 @@ export const portfolioData: PortfolioConfig = {
   } satisfies PersonalInfo,
 
   socialLinks: {
-    // PLACEHOLDER: paste your WhatsApp link (e.g. https://wa.me/91XXXXXXXXXX)
-    whatsapp: '',
+    whatsapp: 'https://wa.me/919648634050',
     github: 'https://github.com/AmarjeetKushwaha21',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/amarjeet-kushwaha-2627a7397/',
     leetcode: 'https://leetcode.com/u/CSE13_058/',
     codechef: 'https://www.codechef.com/users/cse_25_058',
     codeforces: 'https://codeforces.com/profile/Amarjeet_Kushwaha',
     geeksforgeeks: 'https://www.geeksforgeeks.org/profile/kushwahaami3w9',
-    instagram: '',
-    twitter: '',
-    youtube: '',
+    instagram: 'https://www.instagram.com/amar.storyframe/',
+    twitter: 'https://x.com/AmarjeetKu21',
+    youtube: 'https://www.youtube.com/@amarjeetkushwaha7625',
   } satisfies SocialLinks,
 
   // Rotating titles in the hero
