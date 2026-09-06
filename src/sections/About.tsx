@@ -72,8 +72,6 @@ function StatCard({ stat, index }: { stat: StatItem; index: number }) {
 }
 
 export function About() {
-  const { intro } = portfolioData.personalInfo
-
   return (
     <section id="about" className="section-shell scroll-mt-24 py-24">
       <SectionHeading
@@ -84,19 +82,10 @@ export function About() {
 
       <div className="mt-12 grid gap-10 lg:grid-cols-2">
         <Reveal>
-          <div className="glass-card h-full p-7 leading-relaxed text-slate-600 dark:text-slate-300">
-            <p>{intro}</p>
-            <p className="mt-4">
-              {/* PLACEHOLDER: replace with your current focus and goals */}
-              Currently, my focus is on deepening my full-stack skills — designing clean REST APIs,
-              crafting responsive frontend experiences, and sharpening my problem-solving through
-              competitive programming. I am working toward building products that real people enjoy
-              using.
-            </p>
-            <p className="mt-4">
-              I care about writing maintainable code, learning new technologies quickly, and
-              collaborating with teams that push me to grow.
-            </p>
+          <div className="glass-card h-full space-y-4 p-7 leading-relaxed text-slate-600 dark:text-slate-300">
+            {portfolioData.aboutParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+            ))}
           </div>
         </Reveal>
 

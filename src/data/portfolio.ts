@@ -140,6 +140,8 @@ export interface PortfolioConfig {
   socialLinks: SocialLinks
   rotatingTitles: string[]
   stats: StatItem[]
+  /** About Me section paragraphs */
+  aboutParagraphs: string[]
   skills: SkillCategory[]
   softSkills: SoftSkill[]
   timeline: TimelineEntry[]
@@ -198,6 +200,13 @@ export const portfolioData: PortfolioConfig = {
     { id: 'certificates', label: 'Certificates', value: 2, suffix: '' },
     { id: 'achievements', label: 'Achievements', value: 1, suffix: '' },
   ] satisfies StatItem[],
+
+  // About Me section content
+  aboutParagraphs: [
+    'I\'m a second-year B.Tech Computer Science student at ABES Engineering College, passionate about turning ideas into real-world solutions through code. My core strengths lie in C++, Data Structures & Algorithms, JavaScript, React, and Node.js, with a growing interest in data visualization and full-stack development.',
+    'I enjoy building practical projects that solve real problems while continuously sharpening my problem-solving skills on competitive programming platforms. Beyond coding, I\'m a public speaker and team leader who enjoys collaborating, communicating ideas, and taking initiative.',
+    'My goal is to grow into a versatile software engineer who can combine strong problem-solving, full-stack development, and data-driven thinking to build products that create meaningful impact.',
+  ],
 
   skills: [
     {
