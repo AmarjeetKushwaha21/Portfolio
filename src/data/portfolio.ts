@@ -129,6 +129,10 @@ export interface StatItem {
   label: string
   value: number
   suffix?: string
+  /** Digits after the decimal point (e.g. 2 for SGPA) */
+  decimals?: number
+  /** Set false to display the value directly — no count-up animation */
+  animated?: boolean
 }
 
 export interface PortfolioConfig {
@@ -187,7 +191,7 @@ export const portfolioData: PortfolioConfig = {
 
   // PLACEHOLDER: set all counters to real numbers — they are animated on scroll
   stats: [
-    { id: 'years', label: 'Years Learning', value: 0, suffix: '+' },
+    { id: 'sgpa', label: 'First Year SGPA', value: 9.09, decimals: 2, animated: false },
     { id: 'projects', label: 'Projects Built', value: 0, suffix: '+' },
     { id: 'problems', label: 'Problems Solved', value: 0, suffix: '+' },
     { id: 'hackathons', label: 'Hackathons', value: 0, suffix: '' },

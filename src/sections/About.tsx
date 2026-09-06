@@ -4,13 +4,24 @@ import { SectionHeading } from '../components/SectionHeading'
 import { Reveal } from '../components/Reveal'
 import { portfolioData, type StatItem } from '../data/portfolio'
 
-function Counter({ value, suffix }: { value: number; suffix?: string }) {
+function Counter({
+  value,
+  suffix,
+  decimals = 0,
+  animated = true,
+}: {
+  value: number
+  suffix?: string
+  decimals?: number
+  animated?: boolean
+}) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-40px' })
   const [display, setDisplay] = useState(0)
 
+  // Animated integers count up on scroll; static values (e.g. SGPA) render as-is
   useEffect(() => {
-    if (!inView || value <= 0) return
+    if (!animated || !inView || value <= 0) return
     const duration = 1400
     const start = performance.now()
     let raf = 0
@@ -22,11 +33,15 @@ function Counter({ value, suffix }: { value: number; suffix?: string }) {
     }
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
-  }, [inView, value])
+  }, [animated, inView, value])
+
+  const text = animated
+    ? String(Math.min(display, value))
+    : value.toFixed(decimals)
 
   return (
     <span ref={ref} className="font-display tabular-nums">
-      {display}
+      {text}
       {suffix}
     </span>
   )
@@ -41,7 +56,12 @@ function StatCard({ stat, index }: { stat: StatItem; index: number }) {
           className="absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-indigo-500 to-cyan-400 opacity-0 transition-opacity group-hover:opacity-100"
         />
         <p className="text-3xl font-bold text-slate-900 sm:text-4xl dark:text-white">
-          <Counter value={stat.value} suffix={stat.suffix} />
+          <Counter
+            value={stat.value}
+            suffix={stat.suffix}
+            decimals={stat.decimals}
+            animated={stat.animated}
+          />
         </p>
         <p className="mt-1.5 text-xs font-medium tracking-wide text-slate-500 uppercase dark:text-slate-400">
           {stat.label}
