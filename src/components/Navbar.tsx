@@ -105,7 +105,7 @@ export function Navbar() {
             <li key={href}>
               <a
                 href={href}
-                className={`relative rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+                className={`relative inline-flex h-9 items-center rounded-lg px-3 text-sm font-medium transition-colors ${
                   active === href
                     ? 'text-indigo-500 dark:text-indigo-300'
                     : 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'
