@@ -7,7 +7,7 @@ const floatingBadges = [
   { label: 'React', className: 'left-[-8%] top-[16%]', delay: '0s' },
   { label: 'Node.js', className: 'right-[-6%] top-[28%]', delay: '0.8s' },
   { label: 'C++', className: 'left-[-12%] bottom-[22%]', delay: '1.6s' },
-  { label: 'TypeScript', className: 'right-[-10%] bottom-[14%]', delay: '2.4s' },
+  { label: 'JavaScript', className: 'right-[-10%] bottom-[14%]', delay: '2.4s' },
 ]
 
 export function Hero() {
