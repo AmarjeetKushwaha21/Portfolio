@@ -20,7 +20,16 @@ export function SocialMedia() {
     { key: 'whatsapp', label: 'WhatsApp', description: 'Chat with me directly', url: socialLinks.whatsapp, brand: 'whatsapp' },
     { key: 'linkedin', label: 'LinkedIn', description: 'Professional network', url: socialLinks.linkedin, brand: 'linkedin' },
     { key: 'instagram', label: 'Instagram', description: 'Behind the scenes', url: socialLinks.instagram, brand: 'instagram' },
-    { key: 'email', label: 'Email', description: 'Best way to reach me', url: personalInfo.email ? `mailto:${personalInfo.email}` : '', isEmail: true },
+    {
+      key: 'email',
+      label: 'Email',
+      description: 'Best way to reach me',
+      // Gmail compose URL (no mailto:) — avoids the Windows app-selection dialog
+      url: personalInfo.email
+        ? `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(personalInfo.email)}`
+        : '',
+      isEmail: true,
+    },
     { key: 'x', label: 'X / Twitter', description: 'Thoughts & tech chatter', url: socialLinks.twitter, brand: 'x' },
     { key: 'youtube', label: 'YouTube', description: 'Videos & tutorials', url: socialLinks.youtube, brand: 'youtube' },
   ]
