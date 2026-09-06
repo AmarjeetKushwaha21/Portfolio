@@ -98,6 +98,8 @@ export interface Achievement {
   organization: string
   link: string
   category: 'competitive' | 'hackathon' | 'academic' | 'projects' | 'leadership' | 'other'
+  /** Optional photo shown on the achievement card */
+  image?: string
   placeholder?: boolean
 }
 
@@ -389,6 +391,7 @@ export const portfolioData: PortfolioConfig = {
       organization: 'ABES Engineering College, Ghaziabad',
       link: '',
       category: 'academic',
+      image: '/images/achievements/genero-2026-gold-medal.jpg',
     },
   ] satisfies Achievement[],
 

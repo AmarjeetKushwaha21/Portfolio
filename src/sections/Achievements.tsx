@@ -28,8 +28,24 @@ export function Achievements() {
             <article className="glass-card group relative h-full overflow-hidden p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/10">
               <div
                 aria-hidden
-                className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 opacity-0 transition-opacity group-hover:opacity-100"
+                className="absolute inset-x-0 top-0 z-10 h-1 bg-gradient-to-r from-indigo-500 to-cyan-400 opacity-0 transition-opacity group-hover:opacity-100"
               />
+              {achievement.image && (
+                <a
+                  href={achievement.image}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View full photo: ${achievement.title}`}
+                  className="-m-6 mb-5 block overflow-hidden"
+                >
+                  <img
+                    src={achievement.image}
+                    alt={`${achievement.title} — photo`}
+                    loading="lazy"
+                    className="h-44 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </a>
+              )}
               <span
                 className={`flex size-11 items-center justify-center rounded-xl bg-gradient-to-br ${
                   categoryColors[achievement.category] ?? categoryColors.other
