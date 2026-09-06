@@ -189,8 +189,8 @@ export const portfolioData: PortfolioConfig = {
     { id: 'projects', label: 'Projects Built', value: 0, suffix: '+' },
     { id: 'problems', label: 'Problems Solved', value: 0, suffix: '+' },
     { id: 'hackathons', label: 'Hackathons', value: 0, suffix: '' },
-    { id: 'certificates', label: 'Certificates', value: 0, suffix: '' },
-    { id: 'achievements', label: 'Achievements', value: 0, suffix: '' },
+    { id: 'certificates', label: 'Certificates', value: 2, suffix: '' },
+    { id: 'achievements', label: 'Achievements', value: 1, suffix: '' },
   ] satisfies StatItem[],
 
   skills: [
@@ -381,14 +381,14 @@ export const portfolioData: PortfolioConfig = {
   // PLACEHOLDER: add real achievements with proof links where possible
   achievements: [
     {
-      id: 'achievement-1',
-      title: 'Achievement Title (Placeholder)',
-      description: 'Describe the achievement and why it matters.',
-      date: '20XX',
-      organization: 'Organization',
+      id: 'genero-2026-gold-medal',
+      title: 'Gold Medal — Business Idea Presentation',
+      description:
+        'Appreciated with a gold medal for the business idea presentation at GENERO 2026, organized by ABES Engineering College, Ghaziabad.',
+      date: '2026',
+      organization: 'ABES Engineering College, Ghaziabad',
       link: '',
-      category: 'competitive',
-      placeholder: true,
+      category: 'academic',
     },
   ] satisfies Achievement[],
 
