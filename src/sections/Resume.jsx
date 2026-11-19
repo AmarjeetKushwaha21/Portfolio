@@ -23,11 +23,7 @@ export function Resume() {
             Amarjeet-Kushwaha-Resume.pdf
           </h3>
           <p className="mx-auto mt-2 max-w-sm text-sm text-slate-500 dark:text-slate-400">
-            Replace the placeholder file at{' '}
-            <code className="rounded bg-slate-900/10 px-1.5 py-0.5 text-xs dark:bg-white/10">
-              public/resume/Amarjeet-Kushwaha-Resume.pdf
-            </code>{' '}
-            with your real resume — no code changes needed.
+            A one-page snapshot of my skills, education, and experience — view it in the browser or download a copy.
           </p>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <a

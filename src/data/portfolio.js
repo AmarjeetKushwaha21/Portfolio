@@ -8,166 +8,21 @@
  * ============================================================
  */
 
-export interface PersonalInfo {
-  name: string
-  role: string
-  email: string
-  phone: string
-  location: string
-  profileImage: string
-  resume: string
-  tagline: string
-  intro: string
-  availability: string
-}
-
-export interface SocialLinks {
-  whatsapp: string
-  github: string
-  linkedin: string
-  leetcode: string
-  codechef: string
-  codeforces: string
-  geeksforgeeks: string
-  instagram: string
-  twitter: string
-  youtube: string
-}
-
-export interface SkillCategory {
-  id: string
-  title: string
-  icon: 'code' | 'layout' | 'server' | 'database' | 'tools' | 'brain'
-  skills: string[]
-}
-
-export interface SoftSkill {
-  name: string
-  description: string
-}
-
-export interface TimelineEntry {
-  kind: 'education' | 'experience'
-  title: string
-  organization: string
-  period: string
-  location?: string
-  points: string[]
-  technologies?: string[]
-  placeholder?: boolean
-}
-
-export type ProjectCategory = 'fullstack' | 'frontend' | 'backend' | 'ai' | 'other'
-
-export interface Project {
-  id: string
-  name: string
-  description: string
-  problem: string
-  categories: ProjectCategory[]
-  technologies: string[]
-  features: string[]
-  image?: string
-  github: string
-  demo: string
-  featured?: boolean
-  placeholder?: boolean
-}
-
-export interface Hackathon {
-  id: string
-  name: string
-  organizer: string
-  date: string
-  team: string
-  problemStatement: string
-  solution: string
-  technologies: string[]
-  achievement: string
-  certificate: string
-  projectLink: string
-  githubLink: string
-  placeholder?: boolean
-}
-
-export interface Achievement {
-  id: string
-  title: string
-  description: string
-  date: string
-  organization: string
-  link: string
-  category: 'competitive' | 'hackathon' | 'academic' | 'projects' | 'leadership' | 'other'
-  /** Optional photo shown on the achievement card */
-  image?: string
-  placeholder?: boolean
-}
-
-export interface Certificate {
-  id: string
-  name: string
-  organization: string
-  date: string
-  credentialId: string
-  image?: string
-  verifyUrl: string
-  /** Optional official PDF, linked from the certificate lightbox */
-  pdfUrl?: string
-  placeholder?: boolean
-}
-
-export interface CodingProfile {
-  platform: 'leetcode' | 'codechef' | 'codeforces' | 'gfg' | 'hackerrank' | 'github'
-  username: string
-  description: string
-  url: string
-  stats: { label: string; value: string }[]
-}
-
-export interface StatItem {
-  id: string
-  label: string
-  value: number
-  suffix?: string
-  /** Digits after the decimal point (e.g. 2 for SGPA) */
-  decimals?: number
-  /** Set false to display the value directly — no count-up animation */
-  animated?: boolean
-}
-
-export interface PortfolioConfig {
-  personalInfo: PersonalInfo
-  socialLinks: SocialLinks
-  rotatingTitles: string[]
-  stats: StatItem[]
-  /** About Me section paragraphs */
-  aboutParagraphs: string[]
-  skills: SkillCategory[]
-  softSkills: SoftSkill[]
-  timeline: TimelineEntry[]
-  projects: Project[]
-  hackathons: Hackathon[]
-  achievements: Achievement[]
-  certificates: Certificate[]
-  codingProfiles: CodingProfile[]
-  formspreeEndpoint: string
-}
-
-export const portfolioData: PortfolioConfig = {
+export const portfolioData = {
   personalInfo: {
     name: 'Amarjeet Kushwaha',
     role: 'Software Developer & Full-Stack Developer',
     // PLACEHOLDER: fill in your contact details
     email: 'kushwahaamarjeet34@gmail.com',
     phone: '+91 9648634050',
-    location: '',
+    location: 'Crossing Republik, Ghaziabad, Uttar Pradesh, India',
     profileImage: '/images/profile.jpg',
     resume: '/resume/Amarjeet-Kushwaha-Resume.pdf',
     tagline: 'Building, learning, and solving one problem at a time.',
     intro:
       'I build scalable, user-focused web applications and enjoy solving complex problems through code. I am passionate about full-stack development, competitive programming, and building real-world products.',
     availability: 'Open to Opportunities',
-  } satisfies PersonalInfo,
+  },
 
   socialLinks: {
     whatsapp: 'https://wa.me/919648634050',
@@ -180,7 +35,7 @@ export const portfolioData: PortfolioConfig = {
     instagram: 'https://www.instagram.com/amar.storyframe/',
     twitter: 'https://x.com/AmarjeetKu21',
     youtube: 'https://www.youtube.com/@amarjeetkushwaha7625',
-  } satisfies SocialLinks,
+  },
 
   // Rotating titles in the hero
   rotatingTitles: [
@@ -199,7 +54,7 @@ export const portfolioData: PortfolioConfig = {
     { id: 'hackathons', label: 'Hackathons', value: 0, suffix: '' },
     { id: 'certificates', label: 'Certificates', value: 2, suffix: '' },
     { id: 'achievements', label: 'Achievements', value: 1, suffix: '' },
-  ] satisfies StatItem[],
+  ],
 
   // About Me section content
   aboutParagraphs: [
@@ -254,7 +109,7 @@ export const portfolioData: PortfolioConfig = {
         'AI Tools',
       ],
     },
-  ] satisfies SkillCategory[],
+  ],
 
   softSkills: [
     { name: 'Communication', description: 'Explaining technical ideas clearly to any audience.' },
@@ -267,20 +122,25 @@ export const portfolioData: PortfolioConfig = {
     { name: 'Creativity', description: 'Finding unconventional, elegant approaches.' },
     { name: 'Collaboration', description: 'Working openly with code reviews and pairing.' },
     { name: 'Public Speaking', description: 'Presenting demos and technical talks.' },
-  ] satisfies SoftSkill[],
+  ],
 
   // PLACEHOLDER: replace entries — the "placeholder" flag renders a subtle badge
   timeline: [
     {
       kind: 'education',
-      title: 'Bachelor of Technology (Placeholder)',
-      organization: 'Your College / University',
-      period: '20XX — 20XX',
-      points: [
-        'Relevant coursework: Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks',
-        'Achievements: add academic highlights here',
+      title: 'Bachelor of Technology',
+      specialization: 'Computer Science & Engineering',
+      organization: 'ABES Engineering College',
+      period: '2025 — 2029',
+      currentYear: '2nd Year',
+      coursework: [
+        'Data Structures & Algorithms',
+        'Database Management Systems',
+        'Operating Systems',
+        'Computer Networks',
       ],
-      placeholder: true,
+      achievement: 'First Year SGPA — 9.09',
+      points: [],
     },
     {
       kind: 'experience',
@@ -294,7 +154,7 @@ export const portfolioData: PortfolioConfig = {
       technologies: ['React', 'Node.js'],
       placeholder: true,
     },
-  ] satisfies TimelineEntry[],
+  ],
 
   // PLACEHOLDER: at least 6 project slots — set featured:true for larger cards
   projects: [
@@ -372,7 +232,7 @@ export const portfolioData: PortfolioConfig = {
       demo: '',
       placeholder: true,
     },
-  ] satisfies Project[],
+  ],
 
   // PLACEHOLDER: add your hackathons — do not fabricate rankings
   hackathons: [
@@ -391,7 +251,7 @@ export const portfolioData: PortfolioConfig = {
       githubLink: '',
       placeholder: true,
     },
-  ] satisfies Hackathon[],
+  ],
 
   // PLACEHOLDER: add real achievements with proof links where possible
   achievements: [
@@ -406,7 +266,7 @@ export const portfolioData: PortfolioConfig = {
       category: 'academic',
       image: '/images/achievements/genero-2026-gold-medal.jpg',
     },
-  ] satisfies Achievement[],
+  ],
 
   // PLACEHOLDER: add real certificates — empty image falls back to a styled placeholder
   certificates: [
@@ -430,77 +290,48 @@ export const portfolioData: PortfolioConfig = {
       pdfUrl: '/certificates/nptel-modern-cpp.pdf',
       verifyUrl: '',
     },
-  ] satisfies Certificate[],
+  ],
 
-  // PLACEHOLDER: usernames + editable static stats (set values to "—" until known)
+  // Usernames below drive the LIVE stats in the Coding Profiles section —
+  // values are fetched from each platform automatically (cached ~15 min).
   codingProfiles: [
     {
       platform: 'leetcode',
       username: 'CSE13_058',
       description: 'Daily problem solving and contests.',
       url: 'https://leetcode.com/u/CSE13_058/',
-      stats: [
-        { label: 'Problems Solved', value: '—' },
-        { label: 'Contest Rating', value: '—' },
-        { label: 'Easy / Medium / Hard', value: '—' },
-      ],
     },
     {
       platform: 'codechef',
       username: 'cse_25_058',
       description: 'Long challenge and Cook-Off contests.',
       url: 'https://www.codechef.com/users/cse_25_058',
-      stats: [
-        { label: 'Rating', value: '—' },
-        { label: 'Stars', value: '—' },
-        { label: 'Problems Solved', value: '—' },
-      ],
     },
     {
       platform: 'codeforces',
       username: 'Amarjeet_Kushwaha',
       description: 'Div. 2 rounds and virtual contests.',
       url: 'https://codeforces.com/profile/Amarjeet_Kushwaha',
-      stats: [
-        { label: 'Rating', value: '—' },
-        { label: 'Max Rating', value: '—' },
-        { label: 'Rank', value: '—' },
-      ],
     },
     {
       platform: 'gfg',
       username: 'kushwahaami3w9',
       description: 'Practice problems and articles.',
       url: 'https://www.geeksforgeeks.org/profile/kushwahaami3w9',
-      stats: [
-        { label: 'Problems Solved', value: '—' },
-        { label: 'Institute Rank', value: '—' },
-        { label: 'Score', value: '—' },
-      ],
     },
     {
       platform: 'hackerrank',
       username: 'kushwahaamarjee1',
       description: 'Skill certifications and challenges.',
       url: 'https://www.hackerrank.com/profile/kushwahaamarjee1',
-      stats: [
-        { label: 'Badges', value: '—' },
-        { label: 'Stars', value: '—' },
-        { label: 'Certifications', value: '—' },
-      ],
     },
     {
       platform: 'github',
       username: 'AmarjeetKushwaha21',
       description: 'Open source and personal projects.',
       url: 'https://github.com/AmarjeetKushwaha21',
-      stats: [
-        { label: 'Repositories', value: '—' },
-        { label: 'Followers', value: '—' },
-        { label: 'Contributions', value: '—' },
-      ],
     },
-  ] satisfies CodingProfile[],
+  ],
 
   // Optional: Formspree endpoint for the contact form. Leave empty to run in demo mode.
   formspreeEndpoint: '',

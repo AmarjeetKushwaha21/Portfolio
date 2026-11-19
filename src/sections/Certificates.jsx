@@ -4,10 +4,10 @@ import { SectionHeading } from '../components/SectionHeading'
 import { Reveal } from '../components/Reveal'
 import { CertificateModal } from '../components/CertificateModal'
 import { PlaceholderBadge } from '../components/PlaceholderBadge'
-import { portfolioData, type Certificate } from '../data/portfolio'
+import { portfolioData } from '../data/portfolio'
 
 export function Certificates() {
-  const [selected, setSelected] = useState<Certificate | null>(null)
+  const [selected, setSelected] = useState(null)
 
   return (
     <section id="certificates" className="section-shell scroll-mt-24 py-24">

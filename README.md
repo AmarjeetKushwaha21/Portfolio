@@ -27,7 +27,7 @@ Built with React, TypeScript, Vite, Tailwind CSS v4, and Framer Motion. Dark the
 
 | Layer     | Tools                                                     |
 | --------- | --------------------------------------------------------- |
-| Frontend  | React 19, TypeScript, Vite 8                              |
+| Frontend  | React 19, Java Script, Vite 8                              |
 | Styling   | Tailwind CSS v4 (`@tailwindcss/vite`)                     |
 | Animation | Framer Motion (respects reduced motion)                   |
 | Icons     | Lucide React + inline brand SVGs (lucide dropped brands)  |

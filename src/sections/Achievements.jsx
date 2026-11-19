@@ -4,7 +4,7 @@ import { Reveal } from '../components/Reveal'
 import { PlaceholderBadge } from '../components/PlaceholderBadge'
 import { portfolioData } from '../data/portfolio'
 
-const categoryColors: Record<string, string> = {
+const categoryColors = {
   competitive: 'from-emerald-500/15 to-teal-500/15 text-emerald-500',
   hackathon: 'from-violet-500/15 to-indigo-500/15 text-violet-500',
   academic: 'from-sky-500/15 to-blue-500/15 text-sky-500',

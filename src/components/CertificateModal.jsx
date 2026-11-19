@@ -1,19 +1,13 @@
 import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { ExternalLink, FileText, ShieldCheck, X } from 'lucide-react'
-import type { Certificate } from '../data/portfolio'
-
-interface CertificateModalProps {
-  certificate: Certificate | null
-  onClose: () => void
-}
 
 /** Full-screen lightbox for viewing a certificate. */
-export function CertificateModal({ certificate, onClose }: CertificateModalProps) {
+export function CertificateModal({ certificate, onClose }) {
   // Close on Escape + lock scroll while open
   useEffect(() => {
     if (!certificate) return
-    const onKey = (e: KeyboardEvent) => {
+    const onKey = (e) => {
       if (e.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', onKey)

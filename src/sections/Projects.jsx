@@ -2,9 +2,9 @@ import { useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { SectionHeading } from '../components/SectionHeading'
 import { ProjectCard } from '../components/ProjectCard'
-import { portfolioData, type ProjectCategory } from '../data/portfolio'
+import { portfolioData } from '../data/portfolio'
 
-const filters: { label: string; value: ProjectCategory | 'all' }[] = [
+const filters = [
   { label: 'All', value: 'all' },
   { label: 'Full Stack', value: 'fullstack' },
   { label: 'Frontend', value: 'frontend' },
@@ -14,7 +14,7 @@ const filters: { label: string; value: ProjectCategory | 'all' }[] = [
 ]
 
 export function Projects() {
-  const [active, setActive] = useState<ProjectCategory | 'all'>('all')
+  const [active, setActive] = useState('all')
 
   const visible = useMemo(
     () =>

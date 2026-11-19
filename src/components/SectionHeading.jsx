@@ -1,20 +1,12 @@
 import { Reveal } from './Reveal'
 
-interface SectionHeadingProps {
-  id: string
-  eyebrow: string
-  title: string
-  subtitle?: string
-  align?: 'center' | 'left'
-}
-
 export function SectionHeading({
   id,
   eyebrow,
   title,
   subtitle,
   align = 'center',
-}: SectionHeadingProps) {
+}) {
   const centered = align === 'center'
   return (
     <Reveal className={centered ? 'mx-auto max-w-2xl text-center' : 'max-w-2xl'}>

@@ -2,20 +2,15 @@ import { useEffect, useRef, useState } from 'react'
 import { useInView } from 'framer-motion'
 import { SectionHeading } from '../components/SectionHeading'
 import { Reveal } from '../components/Reveal'
-import { portfolioData, type StatItem } from '../data/portfolio'
+import { portfolioData } from '../data/portfolio'
 
 function Counter({
   value,
   suffix,
   decimals = 0,
   animated = true,
-}: {
-  value: number
-  suffix?: string
-  decimals?: number
-  animated?: boolean
 }) {
-  const ref = useRef<HTMLSpanElement>(null)
+  const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-40px' })
   const [display, setDisplay] = useState(0)
 
@@ -25,7 +20,7 @@ function Counter({
     const duration = 1400
     const start = performance.now()
     let raf = 0
-    const tick = (now: number) => {
+    const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1)
       const eased = 1 - Math.pow(1 - progress, 3)
       setDisplay(Math.round(eased * value))
@@ -47,7 +42,7 @@ function Counter({
   )
 }
 
-function StatCard({ stat, index }: { stat: StatItem; index: number }) {
+function StatCard({ stat, index }) {
   return (
     <Reveal delay={index * 0.06}>
       <div className="glass-card group relative overflow-hidden p-5 text-center transition-transform duration-300 hover:-translate-y-1">

@@ -1,15 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion'
-import type { ReactNode } from 'react'
-
-interface RevealProps {
-  children: ReactNode
-  delay?: number
-  y?: number
-  className?: string
-}
 
 /** Fade-and-rise scroll reveal, disabled when the user prefers reduced motion. */
-export function Reveal({ children, delay = 0, y = 28, className }: RevealProps) {
+export function Reveal({ children, delay = 0, y = 28, className }) {
   const reduceMotion = useReducedMotion()
 
   if (reduceMotion) {

@@ -9,13 +9,12 @@ import {
   Sparkles,
   Target,
   Users,
-  type LucideIcon,
 } from 'lucide-react'
 import { SectionHeading } from '../components/SectionHeading'
 import { Reveal } from '../components/Reveal'
 import { portfolioData } from '../data/portfolio'
 
-const softSkillIcons: LucideIcon[] = [
+const softSkillIcons = [
   MessageCircle,
   Users,
   Target,

@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useState } from 'react'
 import { Copy, Mail, MapPin, Send } from 'lucide-react'
 import { SectionHeading } from '../components/SectionHeading'
 import { Reveal } from '../components/Reveal'
@@ -27,7 +27,7 @@ export function Contact() {
     }
   }
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     if (sending) return
     const form = e.currentTarget
@@ -159,7 +159,7 @@ export function Contact() {
                   Location
                 </p>
                 <p className="text-sm font-medium text-slate-900 dark:text-white">
-                  {personalInfo.location || 'Add your location in the data file'}
+                  {personalInfo.location}
                 </p>
               </div>
             </div>

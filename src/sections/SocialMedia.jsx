@@ -4,19 +4,10 @@ import { Reveal } from '../components/Reveal'
 import { BrandIcon } from '../components/BrandIcon'
 import { portfolioData } from '../data/portfolio'
 
-interface SocialEntry {
-  key: string
-  label: string
-  description: string
-  url: string
-  brand?: 'whatsapp' | 'linkedin' | 'instagram' | 'x' | 'youtube'
-  isEmail?: boolean
-}
-
 export function SocialMedia() {
   const { socialLinks, personalInfo } = portfolioData
 
-  const entries: SocialEntry[] = [
+  const entries = [
     { key: 'whatsapp', label: 'WhatsApp', description: 'Chat with me directly', url: socialLinks.whatsapp, brand: 'whatsapp' },
     { key: 'linkedin', label: 'LinkedIn', description: 'Professional network', url: socialLinks.linkedin, brand: 'linkedin' },
     { key: 'instagram', label: 'Instagram', description: 'Behind the scenes', url: socialLinks.instagram, brand: 'instagram' },

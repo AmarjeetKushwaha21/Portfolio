@@ -1,14 +1,8 @@
 import { ExternalLink } from 'lucide-react'
 import { BrandIcon } from './BrandIcon'
 import { PlaceholderBadge } from './PlaceholderBadge'
-import type { Project } from '../data/portfolio'
 
-interface ProjectCardProps {
-  project: Project
-  index: number
-}
-
-export function ProjectCard({ project, index }: ProjectCardProps) {
+export function ProjectCard({ project, index }) {
   const hasGithub = Boolean(project.github)
   const hasDemo = Boolean(project.demo)
 

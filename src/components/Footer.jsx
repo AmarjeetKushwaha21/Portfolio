@@ -1,7 +1,7 @@
-import { BrandIcon, type BrandName } from './BrandIcon'
+import { BrandIcon } from './BrandIcon'
 import { portfolioData } from '../data/portfolio'
 
-const socials: { name: BrandName; label: string; url: string }[] = [
+const socials = [
   { name: 'github', label: 'GitHub', url: portfolioData.socialLinks.github },
   { name: 'linkedin', label: 'LinkedIn', url: portfolioData.socialLinks.linkedin },
   { name: 'instagram', label: 'Instagram', url: portfolioData.socialLinks.instagram },

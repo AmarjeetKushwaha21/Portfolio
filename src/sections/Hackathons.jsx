@@ -5,7 +5,7 @@ import { Reveal } from '../components/Reveal'
 import { PlaceholderBadge } from '../components/PlaceholderBadge'
 import { portfolioData } from '../data/portfolio'
 
-function isWinner(achievement: string) {
+function isWinner(achievement) {
   return /win|first|1st|rank 1|champion|grand/i.test(achievement)
 }
 

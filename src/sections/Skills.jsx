@@ -1,9 +1,9 @@
-import { Brain, Code, Database, Layout, Server, Wrench, type LucideIcon } from 'lucide-react'
+import { Brain, Code, Database, Layout, Server, Wrench } from 'lucide-react'
 import { SectionHeading } from '../components/SectionHeading'
 import { Reveal } from '../components/Reveal'
-import { portfolioData, type SkillCategory } from '../data/portfolio'
+import { portfolioData } from '../data/portfolio'
 
-const categoryIcons: Record<SkillCategory['icon'], LucideIcon> = {
+const categoryIcons = {
   code: Code,
   layout: Layout,
   server: Server,

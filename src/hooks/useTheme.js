@@ -1,10 +1,8 @@
 import { useCallback, useEffect, useState } from 'react'
 
-type Theme = 'dark' | 'light'
-
 const STORAGE_KEY = 'theme'
 
-function getInitialTheme(): Theme {
+function getInitialTheme() {
   if (typeof window === 'undefined') return 'dark'
   try {
     const saved = localStorage.getItem(STORAGE_KEY)
@@ -16,7 +14,7 @@ function getInitialTheme(): Theme {
 }
 
 export function useTheme() {
-  const [theme, setTheme] = useState<Theme>(getInitialTheme)
+  const [theme, setTheme] = useState(getInitialTheme)
 
   useEffect(() => {
     document.documentElement.classList.toggle('dark', theme === 'dark')

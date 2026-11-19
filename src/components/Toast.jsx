@@ -1,25 +1,15 @@
-import { createContext, useCallback, useContext, useState, type ReactNode } from 'react'
+import { createContext, useCallback, useContext, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CheckCircle2, Info, X } from 'lucide-react'
 
-interface Toast {
-  id: number
-  message: string
-  kind: 'success' | 'info'
-}
-
-interface ToastContextValue {
-  showToast: (message: string, kind?: Toast['kind']) => void
-}
-
-const ToastContext = createContext<ToastContextValue | null>(null)
+const ToastContext = createContext(null)
 
 let nextId = 1
 
-export function ToastProvider({ children }: { children: ReactNode }) {
-  const [toasts, setToasts] = useState<Toast[]>([])
+export function ToastProvider({ children }) {
+  const [toasts, setToasts] = useState([])
 
-  const showToast = useCallback((message: string, kind: Toast['kind'] = 'info') => {
+  const showToast = useCallback((message, kind = 'info') => {
     const id = nextId++
     setToasts((prev) => [...prev, { id, message, kind }])
     window.setTimeout(() => {
@@ -27,7 +17,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     }, 3200)
   }, [])
 
-  const dismiss = (id: number) => setToasts((prev) => prev.filter((t) => t.id !== id))
+  const dismiss = (id) => setToasts((prev) => prev.filter((t) => t.id !== id))
 
   return (
     <ToastContext.Provider value={{ showToast }}>
@@ -67,7 +57,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   )
 }
 
-export function useToast(): ToastContextValue {
+export function useToast() {
   const ctx = useContext(ToastContext)
   if (!ctx) throw new Error('useToast must be used inside <ToastProvider>')
   return ctx
